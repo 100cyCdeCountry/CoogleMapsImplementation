@@ -522,7 +522,7 @@ public class ContestGame : MonoBehaviour {
                  "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSHH!!",
                  "#Empecemos",
                  "Empecemos",
-				 "La Tierra tiene una edad de 4,543 miles de millones años",
+				 "La Tierra tiene una edad de 4.543 millones años",
 				 "Es una cantidad de años incomensurable, aunque comparado con la edad del universo"
                 })
 		));
@@ -544,7 +544,7 @@ public class ContestGame : MonoBehaviour {
 			"¿Cuantas Tierras pudieron existir desde el big bang?",
             new string[] { "11", "6", "3" }, 2, new IContestSentence[]{
 				Sentence.CreateDialog(new string[]{
-					"Es cierto que el universo es longevo, tiene 13,798 mil millones de años",
+					"Es cierto que el universo es longevo, tiene 13.798 millones de años",
 					"Pero también lo es la Tierra, aunque se comparé con el universo",
 					"Solo pudieron haber 3 Tierras, es fascinante",
 					"Tranquilo, yo no me iré, y voy a invitar a alguien",
