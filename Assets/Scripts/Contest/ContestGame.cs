@@ -114,7 +114,7 @@ public class ContestGame : MonoBehaviour {
                  "y no me refiero a CdeCrespo",
                  "pasión por lo que haces, por tus sueños y ambiciones",
                  "es esa pasión lo que hará que todos esos amigos que se fueron porque fallaste vuelvan",
-                 "Por qué es lo que nos une a todos, la pasión por el conocimiento",
+                 "Porque es lo que nos une a todos, la pasión por el conocimiento",
                  "Algo que trascenderá y con el que seguiremos existiendo gracias a la huella que hemos dejado",
                  "Sin quererlo hemos creado una comunidad unida por nuestros intereses",
                  "repartida por el mundo y sin embargo a la vez unida",
@@ -241,7 +241,7 @@ public class ContestGame : MonoBehaviour {
                          "Exacto"
                          },
                          new string[] { 
-                         "Esta bien que seas optimista...",
+                         "Está bien que seas optimista...",
 
                      } },
                      1,
@@ -302,7 +302,7 @@ public class ContestGame : MonoBehaviour {
                  "El ámbar gris proviene de excrementos de cachalotes, pero no de uno cualquiera",
                          }));
         contests["UstedEstaAqui"].OnEnd(DefaultOnEnd("UstedEstaAqui", "UstedEstaAqui",
-             "Busca a Usted Esta Aquí"));
+             "Busca a Usted Está Aquí"));
         
         specificTransforms.Add("UstedEstaAqui", new RotationAndScale{
             rotation = Quaternion.identity,
@@ -464,7 +464,7 @@ public class ContestGame : MonoBehaviour {
                      1,
                      new string[]{
                  "Hola hijos de Arceus, listos para que os explote completamente el cerebro",
-                 "Así que alguien ha invocado al squirtle científico",
+                 "Así que alguien ha invocado al Squirtle Científico",
                  "Vamo a calmarno",
                  "Tranquilo que esto no se ha vuelto Pokémon Go",
                  "Además que te asegura que yo no podría escaparme de la Pokéball",
@@ -473,8 +473,8 @@ public class ContestGame : MonoBehaviour {
                          new string[]{
                  "El efecto túnel es un fenómeno cuántico muy curioso que explica como",
                  "cualquier partícula puede atravesar barreras que según la mecánica clásica no podría",
-                 "Un electron puede atravesar una barrera de potencial sin tener suficiente energía",
-                 "Lo mismo podría hacer yo con los lados de la pokéball, pero hay un problema",
+                 "Un electrón puede atravesar una barrera de potencial sin tener suficiente energía",
+                 "Lo mismo podría hacer yo con los lados de la Pokéball, pero hay un problema",
                  "Este fenómeno es practicamente improbable que suceda a escalas macroscópicas",
                  "puedes estar toda la vida chocandote contra la pared y no traspasarla nunca",
                  "al menos usando el efecto túnel...",
@@ -482,7 +482,7 @@ public class ContestGame : MonoBehaviour {
                  "Y ahora usando mis poderes de invocación voy a traer a...",
                  "latinas calientes... no, eso no era...",
                  "la oveja de Minute Physics o Minuto de Física",
-                 "Esta un poco escondida, así que suerte",
+                 "Está un poco escondida, así que suerte",
                  "Quizás esta más cerca de lo que pienses...",
                  "Que el producto de la masa por la aceleración te acompañe"
                          }));
@@ -505,7 +505,7 @@ public class ContestGame : MonoBehaviour {
                  "Este mapa te enseña los lugares más emblemáticos del país",
                  "como las ciudades y algunos monumentos como las CdeCabezas del monte Rush-Martí",
                  "Pero aparte también aparecerá gente como yo para hacerte preguntas",
-                 "Si las aciertas nos quedaremos y invitaremos a alguien más a venir",
+                 "Si las aciertas nos quedaremos e invitaremos a alguien más a venir",
                  "Si las fallas, el invitado se irá",
                  "Yo soy Jeffry, quizás me conozcas del canal CdeCiencia y aquí va mi pregunta",
                 });
@@ -514,11 +514,13 @@ public class ContestGame : MonoBehaviour {
         Sentence.GetLast(firstDialog).SetNext(question);
 
         Sentence nextDialog = new Sentence("Es broma, todos sabemos que CdeCrespo es una verdad absoluta", new ContestHideButtons(
-			Sentence.CreateDialog(new string[]{
+			(Sentence)ContestData.SentenceListWithEffects(new string[]{
                  "Aquí va mi pregunta",
+                 "#Ssss",
                  "Ssssssssssssssssssssssssssssssssss",
                  "sssssssssssssssssssssssssssssssss",
                  "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSHH!!",
+                 "#Empecemos",
                  "Empecemos",
 				 "La Tierra tiene una edad de 4,543 miles de millones años",
 				 "Es una cantidad de años incomensurable, aunque comparado con la edad del universo"
@@ -735,7 +737,7 @@ public class ContestGame : MonoBehaviour {
                     new string[]{
                  "Los pulpos tienen 3 corazones, pero no para dar más amor",
                  "¡eso no es verdad!",
-                 "ellos ya muuy son cariñosos de por sí",
+                 "ellos ya muuy son cariñosos de por si",
                  "Tienen un par de corazones para llevar la sangre a sus branquias",
                  "y un tercero que bombea sangre al resto del cuerpo",
                  "Y ahora voy a invitar a otra persona y no va a ser un robot",

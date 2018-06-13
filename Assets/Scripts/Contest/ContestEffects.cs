@@ -31,7 +31,7 @@ public class EffectSentence : CanGetNext, IContestSentence
 	{
 		effects = display.GetCharacter().GetComponent<ContestEffects>();
 		ContestEffects.Action action = effects.Get(effectName);
-		switch (effects.Get(effectName).mode)
+		switch (action.mode)
 		{
 			case ContestEffects.Action.Mode.PlayAnimation:
 			case ContestEffects.Action.Mode.PlayAnimationUntilEnd:
@@ -50,7 +50,7 @@ public class EffectSentence : CanGetNext, IContestSentence
 				audio.Play();
 			break;
 			case ContestEffects.Action.Mode.StopSound:
-				effects.GetComponent<Animation>().Stop();
+				effects.GetComponent<AudioSource>().Stop();
 			break;
 			case ContestEffects.Action.Mode.PlayParticules:
 				effects.GetComponent<ParticleSystem>().Play();
