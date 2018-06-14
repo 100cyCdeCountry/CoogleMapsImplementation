@@ -60,7 +60,7 @@ public class ContestGame : MonoBehaviour {
                 "La ballena azul es el vertebrado más grande de todos los tiempos",
                 "Con sus 27 metros de media es mayor incluso que el más grande de los dinosaurios",
                 "Pero no quiere decir que sea el animal más grande",
-                "ya que los animales no tienen porque ser vertebrados"
+                "ya que los animales no tienen por qué ser vertebrados"
             } },
             1,
             new string[]{
@@ -98,60 +98,60 @@ public class ContestGame : MonoBehaviour {
         ContestDefault contest = new ContestDefault((ContestDefault c) => { return c.WasAnswerCorrect(1); });
 
         Sentence firstDialog = Sentence.CreateDialog(new string[]{
-                 "¡Hi Vsauce, Michael's head here!",
+                 "¡Hey Vsauce, Michael's head here!",
                  "But what is here?",
-                 "CdeCountry? ¿Quizás el final del juego?",
+                 "¿CdeCountry? ¿Quizás el final del juego?",
                  "¿¿Debería de ser yo entonces un boss final??",
                  "Según has ido avanzando tus fallos han hecho que personas se vayan",
                  "Es una pena, pero no te preocupes ahora por ellos",
                  "De nuestros errores aprendemos más que de nuestros aciertos",
-                 "Con cada acierto y fallo seguimos avanzando y aprendiendo",
-                 "y solo es gracias a la perseverancia y la determinación por lo que conseguimos alcanzar nuestras metas",
-                 "al fin y al cabo, gracias a ella has llegado hasta aquí",
-                 "gracias a ella has terminado el juego y aprendido alguna cosa que no sabrías",
-                 "pero fracasarás si intentas conseguir esa determinación si te falta una cosa",
-                 "pasión",
-                 "y no me refiero a CdeCrespo",
-                 "pasión por lo que haces, por tus sueños y ambiciones",
-                 "es esa pasión lo que hará que todos esos amigos que se fueron porque fallaste vuelvan",
-                 "Porque es lo que nos une a todos, la pasión por el conocimiento",
-                 "Algo que trascenderá y con el que seguiremos existiendo gracias a la huella que hemos dejado",
-                 "Sin quererlo hemos creado una comunidad unida por nuestros intereses",
-                 "repartida por el mundo y sin embargo a la vez unida",
-                 "y eso es CdeCountry, el rincón donde todos nos encontramos"
+                 "Con cada acierto y fallo seguimos avanzando y experimentando",
+                 "Y es solo gracias a la perseverancia y la determinación que conseguimos alcanzar nuestras metas",
+                 "Al fin y al cabo, gracias a ellas has llegado hasta aquí",
+                 "Gracias a ellas has terminado el juego y aprendido alguna cosa que no sabrías",
+                 "Pero fracasarás en el intento si te falta una cosa",
+                 "Pasión",
+                 "Y no me refiero a CdeCrespo",
+                 "Pasión por lo que haces, por tus sueños y ambiciones",
+                 "Es esa pasión la que hará que todos esos amigos que se fueron vuelvan",
+                 "Porque es lo que nos une a todos, la pasión por el conocimiento y el alcanzar la verdad",
+                 "Algo que trascenderá, y con lo que seguiremos existiendo gracias a la huella que hemos dejado",
+                 "Sin querer hemos creado una comunidad unida por nuestros intereses",
+                 "Repartida por el mundo y, sin embargo, a la vez unida",
+                 "Esto es CdeCountry, el rincón donde todos nos encontramos"
                 });
 
         Sentence finalDialog = Sentence.CreateDialog(new string[]{
-			"Ya puedes volver a CdeCountry y ver a todos de nuevo",
+			"Ya puedes volver a CdeCountry y disfrutar de las vistas",
             "Espero que te haya gustado",
             "And as always",
             "Thanks for playing"
 		});
 
-        IContestSentence question = new ContestQuestion(contest, "Esto es solo una beta así que ¿Qué opinas?",
+        IContestSentence question = new ContestQuestion(contest, "Esto es solo una beta así que, ¿qué opinas?",
             new string[] { "Hay un error en el juego", "Me gustaría añadir algo", "El final es un poco ñoño pero está bien" },
              new bool[] { true, true, true }, 
              new IContestSentence[]{
                 Sentence.CreateDialog(new string[]{
-					"Lo siento, este proyecto está hecho por solo una persona y es normal que haya errore",
+					"Lo siento, este proyecto está hecho por solo una persona y es normal que haya errores",
 					"Manda un MD en Twitter a @100cyCdeCountry o twitealo directamente",
 					"Intentaré solucionarlo lo antes posible.",
 					"¡Y gracias de antemano por avisar!",
 				}, finalDialog),
 				Sentence.CreateDialog(new string[]{
-					"Me alegro de que quieras añadir más cosas.",
+					"Me alegro de que quieras añadir más cosas",
 					"Puedo añadir más divulgadores, aunque depende de cuanto me lo pidáis",
 					"Sí me enviáis los diálogos con las preguntas puedo implementarlo relativamente rápido",
-                    "El juego está en un repositorio público de Github, por lo que si sabes de Unity puedes hacer cambios",
+                    "El juego está en un repositorio público de GitHub, por lo que si sabes de Unity puedes hacer cambios",
                     "Forkea el repositorio y luego pídeme un pull request y lo añadiré",
                     "El repositorio es https://github.com/100cyCdeCountry/CoogleMapsImplementation",
-                    "Para cualquier duda o sugerencia, mandenme un MP a twitter o github y os responderé",
+                    "Para cualquier duda o sugerencia, mándenme un MP a twitter o GitHub y os responderé",
 				}, finalDialog),
 				Sentence.CreateDialog(new string[]{
-					"Se que ha sido un poco ñoño, pero ya estáis acostumbrados a CdeCrespo",
-					"Es una pena que no me haya dado tiempo a meter a más divulgadores",
+					"Sé que ha sido un poco ñoño, pero ya estáis acostumbrados a CdeCrespo",
+					"Es una pena que no me haya dado tiempo para meter a más divulgadores",
 					"De todo el proyecto lo que más me ha costado ha sido hacer los diálogos,",
-                    "comprobar que las preguntas están bien formuladas y corregidas",
+                    "comprobar que las preguntas estén bien formuladas y corregidas",
                     "revisar los videos para imitar como hablan…",
                     "Si queréis ayudarme con eso estaría encantado"
 				}, finalDialog)
@@ -188,23 +188,23 @@ public class ContestGame : MonoBehaviour {
             new string[][] { 
                 new string[] { 
                 "...",
-                "Martí, porque te fugaste cuando te desvele mis sentimientos",
+                "Martí, ¿por qué te fugaste cuando te desvelé mis sentimientos?",
                 "Tanto amas a Crespo...",
                 "...",
-                "Bueno, mejor te explico que es una fuga en el sentido musical"
+                "Bueno, mejor te explico qué es una fuga en el sentido musical"
                 },
                 new string[] { 
-                "Una fuga no es un género musical como el rock o el pop",
+                "Una fuga no es un género musical como el Rock o el Pop",
                 },
                 new string[] { 
                 "En pocas palabras, eso es"
             } },
             new bool[]{true, false, true},
             new string[]{
-        "Buenas soy Jaime Altozano",
-        "Soy el creador del himno de CdeCountry y tengo un canal de divulgación de música",
+        "Buenas, soy Jaime Altozano",
+        "Soy el creador del Himno Nacional de CdeCountry y tengo un canal de divulgación de música",
         "Podría haber traído a Miku pero él no quería hacer otro cameo",
-        "y como que dejar solo una ficha apalabrados iba a ser un poco raro...",
+        "Y como dejar solo una ficha de apalabrados iba a ser un poco raro...",
         "Así que aquí estoy yo, con la ficha de apalabrados y mi teclado",
         "Ya que estoy, voy a hacerte una pregunta"
                 },
@@ -213,7 +213,7 @@ public class ContestGame : MonoBehaviour {
         "Estas voces se fugan, persiguen, dialogan unas con otras, repiten temas…",
         "Como es difícil explicar algo sin escucharlo pásate por mi vídeo De Pokémon a Bach",
         "* Transición en la que debería salir Miku *",
-        "Y ahora tendrás que adentrarte en la wikiselva",
+        "Y ahora tendrás que adentrarte en la Wikiselva",
         "Pues ahí está el invitado de Wikiseba",
         "Hasta la próxima"
                 }));
@@ -252,18 +252,18 @@ public class ContestGame : MonoBehaviour {
                  "Si no conoces a Dot CSV, es un canal de inteligencia artificial llevado por un canario en Finlandia",
                  "No se como resiste el frío de Kohonen... (perdón por adelantado por el chiste...)",
                  "La inteligencia artificial busca que las máquinas imiten el comportamiento inteligente",
-                 "Está puede dividirse en dos tipos, débil y fuerte",
-                 "Las IA débil puede imitar un número de comportamientos limitados",
-                 "por ejemplo un reconocedor de voz puede reconocer cuando hablas pero no si estas malo de la garganta",
+                 "Ésta puede dividirse en dos tipos; débil y fuerte",
+                 "Las IA débiles pueden imitar un número de comportamientos limitados",
+                 "Por ejemplo, un reconocedor de voz puede reconocer cuando hablas, pero no si estás malo de la garganta",
                  "Las IA fuertes pueden aplicarse a un gran número dominios y aprender a manejarse en nuevas situaciones"
                          },
                          new string[]{
                  "Aún no existe ninguna Inteligencia Artificial que pueda aplicarse a multiples y variados dominios",
                  "Podemos reunir IA débiles y hacer que trabajen juntas, pero no es suficiente",
                  "Una IA fuerte sería equiparable a la inteligencia de un ser humano",
-                 "y para lograr algo así aún queda un largo camino",
+                 "Y para lograr algo así aún queda un largo camino",
                  "O puede que no...",
-                 "mejor invito a un robot muy filosofo para que lo compruebes por ti mismo",
+                 "Mejor invito a un robot muy filósofo para que lo compruebes por ti mismo",
                  "Cerrando sesión..."
                          }));
         contests["Sophia"].OnEnd(DefaultOnEnd("Sophia", "RobotDePlaton",
@@ -283,11 +283,11 @@ public class ContestGame : MonoBehaviour {
                      new string[] { "Caca de cachalote", "Caca de elefante", "Caca de mamut fosilizada" },
                      new string[][] { 
                          new string[] { 
-                         "Enhorabuena eres todo un experto de mierda"
+                         "Enhorabuena, ¡eres un experto de mierda!"
                          },
                          new string[] { 
                          "Caca de elefante, podría haber sido",
-                         "aunque sería raro que no supieran su procedencia en un principio"
+                         "Aunque sería raro que no supieran su procedencia en un principio"
                          },
                          new string[] { 
                          "Pues no, no ha habido suerte si de verdad querías eau de CMamut",
@@ -318,21 +318,21 @@ public class ContestGame : MonoBehaviour {
                      new string[] { "Caca de cachalote", "Caca de elefante", "Caca de mamut fosilizada" },
                      new string[][] { 
                          new string[] { 
-                         "Enhorabuena eres todo un experto de mierda"
+                         "Enhorabuena, ¡eres un experto de mierda!"
                          },
                          new string[] { 
                          "Caca de elefante, podría haber sido",
-                         "aunque sería raro que no supieran su procedencia en un principio"
+                         "Aunque sería raro que no supieran su procedencia en un principio"
                          },
                          new string[] { 
                          "Pues no, no ha habido suerte si de verdad querías eau de CMamut",
-                         "aunque sí, hay restos de popo de mamut según he investigado",
-                         "algunos de estos estudios que apuntan que los mamuts se comian su propia caquita",
-                         "aunque no se ha determinado el motivo, puede que fuese a causa de hambrunas o con fines biológicos",
-                         "los elefantes jóvenes también comen el popo de las madres para conseguir bacterias digestivas",
-                         "bueno, esto da para otro video de minute earth",
-                         "aunque ahora que recuerdo, hay un video de trasplante de caca en el que se habla del tema",
-                         "mejor vamos con la correcta"
+                         "Aunque sí, hay restos de popo de mamut según he investigado",
+                         "Algunos de estos estudios que apuntan que los mamuts se comian su propia caquita",
+                         "Aunque no se ha determinado el motivo, puede que fuese a causa de hambrunas o con fines biológicos",
+                         "Los elefantes jóvenes también comen el popó de las madres para conseguir bacterias digestivas",
+                         "Bueno, esto da para otro video de MinuteEarth",
+                         "Aunque ahora que recuerdo, hay un vídeo de trasplante de caca en el que se habla del tema",
+                         "Mejor vamos con la correcta"
                      } },
                      0,
                      new string[]{
@@ -342,32 +342,32 @@ public class ContestGame : MonoBehaviour {
                  "¿Alguna vez te has preguntado porque los vídeos de Minute Earth son tan perturbadores?",
                  "Detrás de esos dibujos cute se esconden vídeos que podrían pertenecer a Dross",
                  "Desde cómo hacen caca los fetos, por qué la caca es marrón...",
-                 "cosas muy perturbadoras de las hienas, que la leche es sangre filtrada..",
+                 "Cosas muy perturbadoras de las hienas, que la leche es sangre filtrada..",
                  "Alguien del equipo tiene ideas muy raras",
                  "Pero hay uno de los vídeos que nunca olvidaré",
                  "El ámbar gris es una sustancia que tiene un gran olor dulzón",
-                 "por esta razón se empezó a usar para crear perfumes",
-                 "aún sin saber de donde provenía esta roca",
-                 "así que mi pregunta es..."
+                 "Por esta razón se empezó a usar para crear perfumes",
+                 "Aún sin saber de donde provenía esta roca",
+                 "Así que mi pregunta es..."
                          },
                          new string[]{
                  "El ámbar gris proviene de excrementos de cachalotes, pero no de uno cualquiera",
                  "Estos son grandes bolos fecales que se acumulan y compactan en el tracto digestivo del animal",
-                 "hasta provocar serios problemas de estreñimiento que pueden causar la muerte",
-                 "cuando el cachalote muere o son expulsados, el ámbar flota y sube a la superficie",
-                 "durante meses o años es erosionado por el agua salada y el sol, hasta que alguien lo recoge",
+                 "Hasta provocar serios problemas de estreñimiento que pueden causar la muerte",
+                 "Cuando el cachalote muere o los excrementos son expulsados, el ámbar flota y sube a la superficie",
+                 "Durante meses o años es erosionado por el agua salada y el sol, hasta que alguien lo recoge",
                  "Así que resumiendo",
                  "Son cacas tan grandes que matan cachalotes y se pudren en el mar, pero que extrañamente huelen bien",
                  "Espero que ahora no te sientas mal si has usado perfume con ámbar gris",
-                 "Por supuesto que no todos los videos de MinuteEarth están relacionados con excrementos",
+                 "Por supuesto que no todos los vídeos de MinuteEarth están relacionados con excrementos",
                  "hay muchos videos interesantes y cutes sobre cosas que suceden en nuestro planeta",
                  "Y si quieres saber más sobre relatividad y fenómenos cuánticos visita Minute Physics",
                  "Ambos canales cuentan con versiones en español",
-                 /*"Y ahora, como buen gato de schrodinger hasta que no me observas no sabes donde estoy",
+                 /*"Y ahora, como buen gato de Schrödinger, hasta que no me observas no sabes dónde estoy",
                  "Pero... ¿dónde esta usted, aún no se ha ubicado?",
                  "Solo digo que siempre puedes ubicarlo cerca de los memes",
                  "Bye!"*/
-                 "Y ahora invitaré a un robot que te hablará de Inteligencia Artificial",
+                 "Ahora invitaré a un robot que te hablará de Inteligencia Artificial",
                  "Bye!"
                          }));
         /*contests["MinutePhysics"].OnEnd(DefaultOnEnd("MinutePhysics", "UstedEstaAqui",
@@ -389,11 +389,11 @@ public class ContestGame : MonoBehaviour {
         Sentence firstDialog = Sentence.CreateDialog(new string[]{
                  "Buenos días y bienvenidos a mundo desCdeConocido.es",
                  "Aquí os desvelaré la verdad que esconden todos estos científicos",
-                 "para ocultar la increíble conspiración que se cierne sobre CdeCountry",
+                 "Para ocultar la increíble conspiración que se cierne sobre CdeCountry",
                  "Comencemos con una simple pregunta",
                 });
         IContestSentence question = new ContestQuestion(contest, "¿Cuál de estas afirmaciones es verdadera?",
-            new string[] { "No estamos gobernados por los illuminati", "La tierra es hueca",
+            new string[] { "No estamos gobernados por los Illuminati", "La tierra es hueca",
                            "La tierra es redonda" }, new bool[]{false, false, true});
 
         Sentence nextDialog = Sentence.CreateDialog(new string[]{
@@ -405,7 +405,7 @@ public class ContestGame : MonoBehaviour {
                 d.MoveNext();
             }, (c, d) => { return c.Next();},
             Sentence.CreateDialog(new string[]{
-                "Ahora sí, gracias poderes psiquicos he desvelado la verdad",
+                "Ahora sí, gracias a mis poderes psíquicos he desvelado la verdad",
                 "Porque la verdad está ahí afuera"},
             new ContestDef((c, d) => {
                 d.SetColorButton(0, ButtonState.Fail);
@@ -417,7 +417,7 @@ public class ContestGame : MonoBehaviour {
             new EffectSentence("Dissapear",
             Sentence.CreateDialog(new string[]{
                  "Oh no, no puede ser...",
-                 "no me encuentro muy bien Oliver",
+                 "no me encuentro muy bien, Oliver",
                  "...",
             }
         ))))));
@@ -448,40 +448,40 @@ public class ContestGame : MonoBehaviour {
                      new string[] { "Efecto Casimir", "Efecto Túnel", "Efecto Doppler" },
                      new string[][] { 
                          new string[] { 
-                         "El efecto Casimir causa que entre dos objetos metalicos aparezca una fuerza que los junte",
-                         "cuando estos están separados por una distancia muy pequeña comparada con su tamaño",
-                         "No se como esto podría servirme para salir",
+                         "El efecto Casimir causa que entre dos placas metálicas aparezca como una fuerza que los junte",
+                         "Cuando estas están separados por una distancia muy pequeña comparada con su tamaño",
+                         "No sé como esto podría servirme para salir",
                          "En cambio sí podría usar el efecto Túnel"
                          },
                          new string[] { 
                          "Buena elección",
                          },
                          new string[] { 
-                         "El efecto Doppler es por lo que oyes diferente la sirena de un coche cuando va o se aleja de tí",
-                         "Realmente no se como podría ayudarme a salir este efecto",
+                         "El efecto Doppler es por lo que oyes diferente la sirena de un coche cuando va o se aleja o acerca a ti",
+                         "Realmente no sé cómo podría ayudarme a salir este efecto",
                          "En cambio sí podría usar el efecto Túnel"
                      } },
                      1,
                      new string[]{
-                 "Hola hijos de Arceus, listos para que os explote completamente el cerebro",
+                 "Hola hijos de Arceus, ¿listos para que os explote completamente el cerebro?",
                  "Así que alguien ha invocado al Squirtle Científico",
                  "Vamo a calmarno",
-                 "Tranquilo que esto no se ha vuelto Pokémon Go",
-                 "Además que te asegura que yo no podría escaparme de la Pokéball",
+                 "Tranquilo, que esto no se ha vuelto Pokémon Go",
+                 "Además, te aseguro que yo no podría escaparme de la Pokéball",
                  "Aunque sea poco probable que funcionase...",
                          },
                          new string[]{
-                 "El efecto túnel es un fenómeno cuántico muy curioso que explica como",
+                 "El efecto Túnel es un fenómeno cuántico muy curioso que explica como",
                  "cualquier partícula puede atravesar barreras que según la mecánica clásica no podría",
                  "Un electrón puede atravesar una barrera de potencial sin tener suficiente energía",
                  "Lo mismo podría hacer yo con los lados de la Pokéball, pero hay un problema",
-                 "Este fenómeno es practicamente improbable que suceda a escalas macroscópicas",
-                 "puedes estar toda la vida chocandote contra la pared y no traspasarla nunca",
-                 "al menos usando el efecto túnel...",
+                 "Este fenómeno es prácticamente improbable que suceda a escalas macroscópicas",
+                 "Puedes estar toda la vida chocándote contra la pared y no traspasarla nunca",
+                 "Al menos usando el efecto Túnel...",
                  "Así que mejor me espero a que Javier me invoque para escapar de ahí",
                  "Y ahora usando mis poderes de invocación voy a traer a...",
-                 "latinas calientes... no, eso no era...",
-                 "la oveja de Minute Physics o Minuto de Física",
+                 "¡Latinas calientes!... No, eso no era...",
+                 "La oveja de Minute Physics o Minuto de Física",
                  "Está un poco escondida, así que suerte",
                  "Quizás esta más cerca de lo que pienses...",
                  "Que el producto de la masa por la aceleración te acompañe"
@@ -504,8 +504,8 @@ public class ContestGame : MonoBehaviour {
                  "¡Hola, bienvenido a CdeCountry! (Pulsa cualquier tecla para seguir)",
                  "Este mapa te enseña los lugares más emblemáticos del país",
                  "como las ciudades y algunos monumentos como las CdeCabezas del monte Rush-Martí",
-                 "Pero aparte también aparecerá gente como yo para hacerte preguntas",
-                 "Si las aciertas nos quedaremos e invitaremos a alguien más a venir",
+                 "Pero también aparecerá gente como yo para hacerte preguntas",
+                 "Si las aciertas, nos quedaremos e invitaremos a alguien más a venir",
                  "Si las fallas, el invitado se irá",
                  "Yo soy Jeffry, quizás me conozcas del canal CdeCiencia y aquí va mi pregunta",
                 });
@@ -537,27 +537,27 @@ public class ContestGame : MonoBehaviour {
             "- Oki, nos vemos CdeChurri",
             "#StopParticles",
 			"Ya puedes buscarle, recuerda que suelen estar en sitios que estén relacionados",
-			"Y adios."
+			"Y adiós."
 		});
 
 		IContestSentence question2 = new ContestQuestion(contest, 
-			"¿Cuantas Tierras pudieron existir desde el big bang?",
+			"¿Cuántas Tierras podrían haber existido desde el Big Bang?",
             new string[] { "11", "6", "3" }, 2, new IContestSentence[]{
 				Sentence.CreateDialog(new string[]{
-					"Es cierto que el universo es longevo, tiene 13.798 millones de años",
-					"Pero también lo es la Tierra, aunque se comparé con el universo",
-					"Solo pudieron haber 3 Tierras, es fascinante",
+					"Es cierto que el Universo es longevo, tiene 13.798 millones de años",
+					"Pero también lo es la Tierra, aunque se compare con el Universo",
+					"Solo podrían haber existido 3 Tierras, es fascinante",
 					"Tranquilo, yo no me iré, y voy a invitar a alguien",
 				}, finalDialog),
 				Sentence.CreateDialog(new string[]{
 					"Casi, realmente el universo no es tan viejo",
-					"Y es que solo pudieron haber 3 Tierras, fascinante",
+					"Y es que solo podrían haber existido 3 Tierras, fascinante",
 					"Tranquilo, yo no me iré, y voy a invitar a alguien"
 				}, finalDialog),
 				Sentence.CreateDialog(new string[]{
-					"En efecto, pudieron haber 3 Tierras",
+					"En efecto, podrían haber existido 3 Tierras",
 					"Solo un tercio de la edad del universo, es fascinante",
-					"Como has acertado voy a invitar a alguien"
+					"Como has acertado, voy a invitar a alguien"
 				}, finalDialog),
 			});
 
