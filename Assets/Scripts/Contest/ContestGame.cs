@@ -523,7 +523,7 @@ public class ContestGame : MonoBehaviour {
                  "#Empecemos",
                  "Empecemos",
 				 "La Tierra tiene una edad de 4.543 millones años",
-				 "Es una cantidad de años incomensurable, aunque comparado con la edad del universo"
+				 "Es una cantidad de años incommensurable, aunque comparado con la edad del universo"
                 })
 		));
         
@@ -603,7 +603,7 @@ public class ContestGame : MonoBehaviour {
                 "Pues sí, es nuestro subconsciente quien toma una decisión",
                 "y luego nosotros sentimos la necesidad de pulsar el botón",
                 "#Normal",
-                "Eso fue concluyo el experimento del psicólogo Libet"
+                "Eso fue lo que concluyó el psicólogo Libet de su experimento"
                      } },
                      2, new string[]{
                  "#Happy",
@@ -663,12 +663,13 @@ public class ContestGame : MonoBehaviour {
         new ContestHideButtons(
 			Sentence.CreateDialog(new string[]{
                  "Volvamos a la relatividad especial",
-                 "Si mides la velocidad de un coche con respecto a tí esta cambiará dependiendo de si estas en movimiento o no",
+                 "Si mides la velocidad de un coche con respecto a ti esta cambiará dependiendo de si estás en movimiento o no",
                  "Esta será mayor si estas parado que si vas en otro coche.",
-                 "Incluso si vas a la par con el coche la velocidad que mediras es 0.",
+                 "Incluso si vas a la par con el coche la velocidad que medirás es 0.",
                  "Pero y si en vez de medir la velocidad de un coche medimos la velocidad de la luz",
                  "Pues da igual a la velocidad a la que vayas porque siempre su velocidad es 299.792.458 m/s, es decir c",
 				 "Aunque vayas al 99.9% de la velocidad de la luz seguirás midiendo la misma velocidad",
+                 "Así que mi pregunta es..."
                 })
 		));
         
@@ -679,16 +680,19 @@ public class ContestGame : MonoBehaviour {
             "Al viajar a velocidades cercanas a la de la luz el tiempo se dilata y el espacio se contrae",
             "de forma que nos da la misma medida que a un observador que este quieto",
             "Si viajasemos a la velocidad de la luz el tiempo simplemente no transcurriría, por lo que no tiene sentido medirlo",
+            "A bajas velocidades, como al medir un coche, también ocurre estas dilataciones y contracciones",
+            "pero los efectos son apenas imperceptibles y se comportan de la forma que estamos acostumbrados a experimentar a diario",
             "Con esto termina mi explicación.",
             "Y recuerda, si queréis más preguntas solo tenéis que buscar un cerebro",
 			"Y gracias por verme."
 		});
 
 		IContestSentence question2 = new ContestQuestion(contest, 
-			"Mi pregunta es ¿porque la velocidad de la luz es constante independientemente de quien la observe?",
+			//"¿por qué la velocidad de la luz es constante independientemente de quien la observe?",
+            "¿Qué ha variado o sucedido en nuestras observaciones para que velocidad de la luz sea constante?",
             new string[] { "Todas son correctas.",
-                 "Porque el espacio y el tiempo se contraen o expanden según la velocidad del observador.",
-                 "Porque la luz tiene una superposición de velocidades que colapsan al ser medidas en c.",
+                 "El espacio y el tiempo se contraen o expanden según la velocidad del observador.",
+                 "La luz tiene una superposición de velocidades que colapsan al ser medidas en c.",
                   }, 1, new IContestSentence[]{
 				Sentence.CreateDialog(new string[]{
 					"Esta es la típica respuesta trampa de examen",
