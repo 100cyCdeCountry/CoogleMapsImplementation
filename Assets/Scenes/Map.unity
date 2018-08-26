@@ -12547,6 +12547,47 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 224481239574756016, guid: c3237016367e23349b551d88da649a05,
     type: 2}
   m_PrefabInternal: {fileID: 278011935}
+--- !u!1 &280420965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 280420966}
+  - component: {fileID: 280420967}
+  m_Layer: 0
+  m_Name: Reserva Cucarachas City
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &280420966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280420965}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 827.3, y: 0, z: 590.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1529217314}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &280420967
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 280420965}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 72.17804, y: 1, z: 41.951477}
+  m_Center: {x: -7.847992, y: 0, z: -40.355377}
 --- !u!1 &282840810
 GameObject:
   m_ObjectHideFlags: 0
@@ -12609,6 +12650,10 @@ MonoBehaviour:
     housesDimension: {x: 0, y: 0}
   - region: {fileID: 306836014}
     spaceBetween: 6
+    houses: 0
+    housesDimension: {x: 0, y: 0}
+  - region: {fileID: 280420967}
+    spaceBetween: 5
     houses: 0
     housesDimension: {x: 0, y: 0}
   housesModels:
@@ -36164,6 +36209,7 @@ Transform:
   - {fileID: 295117228}
   - {fileID: 791852407}
   - {fileID: 1839161501}
+  - {fileID: 280420966}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
