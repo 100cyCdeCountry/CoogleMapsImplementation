@@ -12586,8 +12586,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 72.17804, y: 1, z: 41.951477}
-  m_Center: {x: -7.847992, y: 0, z: -40.355377}
+  m_Size: {x: 29.134705, y: 1, z: 25.26532}
+  m_Center: {x: 28.093292, y: 0, z: 18.376923}
 --- !u!1 &282840810
 GameObject:
   m_ObjectHideFlags: 0
@@ -12653,7 +12653,7 @@ MonoBehaviour:
     houses: 0
     housesDimension: {x: 0, y: 0}
   - region: {fileID: 280420967}
-    spaceBetween: 5
+    spaceBetween: 6
     houses: 0
     housesDimension: {x: 0, y: 0}
   housesModels:
