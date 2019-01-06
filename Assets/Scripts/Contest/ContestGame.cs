@@ -801,7 +801,7 @@ public class ContestGame : MonoBehaviour {
                          }));
 
         contests["RobotDePlaton"].OnEnd(DefaultOnEnd("RobotDePlaton", "RobotDeColon",
-             "Busca al Robot de Platón"));
+             "Busca al Robot de Colón"));
 
         specificTransforms.Add("RobotDePlaton", new RotationAndScale
         {
