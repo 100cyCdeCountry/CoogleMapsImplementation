@@ -4,6 +4,7 @@
     "com.unity.textmeshpro": "exclude",
     "com.unity.analytics": "exclude",
     "com.unity.standardevents": "exclude",
-    "com.unity.purchasing": "exclude"
+    "com.unity.purchasing": "exclude",
+    "com.unity.probuilder": "3.0.9"
   }
 }
