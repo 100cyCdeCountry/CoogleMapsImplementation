@@ -18,7 +18,6 @@ public class CameraHandHeld : MonoBehaviour {
 		Vector3 position = initialPosition;
 		position.x += Mathf.PerlinNoise(Time.time * velocity, 0) * size;
 		position.y += Mathf.PerlinNoise(0, Time.time * velocity) * size;
-		transform.position = position;
-		
+		transform.position = position;		
 	}
 }
