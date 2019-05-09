@@ -6,9 +6,9 @@ public class MenuOpener : MonoBehaviour {
 
 	private Animation anim;
 	private AnimationClip openAnim;
-    private AnimationClip closeAnim;
+	private AnimationClip closeAnim;
 
-    void Start() {
+	void Start() {
 		anim = GetComponent<Animation>();
 		Vector3 position = GetComponent<RectTransform>().position;
 		position.x = -400.0f;

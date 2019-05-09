@@ -27,8 +27,15 @@ public class EnableOnDate : MonoBehaviour {
 
 	void Start () {
 		var date = DateTime.Now.ToLocalTime();
-		bool isDate = date.Day == day && date.Month == (int)month;
-		gameObject.SetActive(isDate);
+		bool isDate = date.Day == day && date.Month == ((int)month + 1);
+
+		if(isDate) {
+			for (int childId = 0; childId < gameObject.transform.childCount; childId++)
+			{
+				gameObject.transform.GetChild(childId).gameObject.SetActive(true);	
+			}
+		}
+			
 	}
 	
 }
