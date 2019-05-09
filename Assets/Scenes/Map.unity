@@ -1114,7 +1114,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6597c8685354d2841ad094cace363b66, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8ddac4a2abfac9a498faa76c9fd0214c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -16132,7 +16132,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ef557ec953bc03a48af9ccac83a48e5e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3e9984055e17e894cb54a0a373ec2dfb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
@@ -26786,7 +26786,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7ca5bd6484ef1cd4c930665ad06ce4bd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a4eb90a04cd230242ac8a90f0ad649f2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -28587,7 +28587,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3bcf762a034e9cc49a60c28f82b7c6c4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0bd098f499d52e74d8cfeabdb4df4332, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.6
   m_Pitch: 1
@@ -36022,7 +36022,7 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 983674315}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, Unity.ugui
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -40470,7 +40470,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5382755b529ac54488b5b21ba2a71fd6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 863467dadb6ffe7489f607f4fc64abf1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -40740,7 +40740,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d23e8949bc2684049b835976a3315dd3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f1cdee1a94cef35499b5a9a8a77cb1e2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.4
   m_Pitch: 0.8
@@ -48731,7 +48731,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9d40c21a875a3214d825f900c1b901b5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1be56ef64a4a0bf4ea0eb1f7cfeb2a85, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.75
   m_Pitch: 1
@@ -48858,7 +48858,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0ea5843e2e99c884182aac9971c43cbf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0cad8bc141914624fa1691690ffed9fd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -62265,7 +62265,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 824f40f334550e145b5f3125a30c56fb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 595990bfe1f25d645b2e3c2f67d574cd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.738
   m_Pitch: 1
@@ -80113,7 +80113,7 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1718057390}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, Unity.ugui
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
