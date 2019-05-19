@@ -30,6 +30,7 @@ public class UrlImage : MonoBehaviour {
 	}
 
 	public IEnumerator LoadImageCoroutine(string url) {
+		//warning CS0618: 'WWW' is obsolete: 'Use UnityWebRequest, a fully featured replacement which is more efficient and has additional features'
 		WWW www = new WWW(url);
 		yield return www;
 		img.sprite = Sprite.Create(www.texture, new Rect(0, 0, www.texture.width, www.texture.height), new Vector2(0, 0));

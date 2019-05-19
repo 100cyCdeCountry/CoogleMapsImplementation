@@ -15,8 +15,7 @@ public class TreeMaker : MonoBehaviour {
 
     public BoxCollider[] noTreesRegions;
 
-    // Use this for initialization
-    void Start () {
+    public void CreateTrees () {
         cities = GetComponent<CityGenerator>();
 		Terrain terrain = Terrain.activeTerrain;
 		for(int i = 0; i < amount; i++)
@@ -61,7 +60,25 @@ public class TreeMaker : MonoBehaviour {
 
     private void CreateTree(Vector3 position)
     {
-        Instantiate(treePrefabs[Random.Range(0, treePrefabs.Length)],
+        GameObject tree = Instantiate(treePrefabs[Random.Range(0, treePrefabs.Length)],
                         position, Quaternion.Euler(0, Random.Range(0, 360), 0));
+        tree.transform.parent = transform;
+        tree.tag = "Tree";
+        tree.isStatic = true;
+
     }
+
+    public void RemoveTrees() {
+        Transform[] allChildren = gameObject.GetComponentsInChildren<Transform>();
+		List<GameObject> trees = new List<GameObject>();
+        foreach (Transform child in allChildren) {
+            if (child.gameObject.tag == "Tree") {
+				trees.Add(child.gameObject);
+            }
+        }
+		foreach (GameObject tree in trees) {
+			DestroyImmediate(tree);
+		}
+    }
+
 }

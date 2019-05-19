@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GeoTag : MonoBehaviour {
 
@@ -28,17 +29,18 @@ public class GeoTag : MonoBehaviour {
 
 	private float height = 20;
 	private float surfaceHeight;
-	private Text text;
+	private TextMeshProUGUI text;
 
 	// Use this for initialization
 	void Start () {
 		if(typeDatas == null)
 			InitTypeData();
 
-		text = GetComponentInChildren<Text>();
+		text = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+		
 		text.text = tagName;
 		text.color = typeDatas[type].color;
-
+		
 		Vector3 position = transform.position;
 		surfaceHeight = SurfaceManager.GetSurfaceHeight(position);
 		position.y = surfaceHeight + height;
@@ -47,7 +49,7 @@ public class GeoTag : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 
 		if(Camera.main == null) return;
 
@@ -56,10 +58,14 @@ public class GeoTag : MonoBehaviour {
 
 		Color c = text.color;
 		c.a = Mathf.Lerp(0, 1, (surfaceHeight + data.maxHeight - cameraHeight) * 0.08f);
-		text.color = c;
 
-		float desiredScale = (Camera.main.transform.position.y - surfaceHeight - height) * data.scale;
-		transform.localScale = Vector3.one * Mathf.Min(desiredScale, 3.0f * data.scale / 0.02f);
+		if(c.a > 0 || text.color.a > 0) {
+			text.color = c;
+
+			float desiredScale = (Camera.main.transform.position.y - surfaceHeight - height) * data.scale;
+			transform.localScale = Vector3.one * Mathf.Min(desiredScale, 3.0f * data.scale / 0.02f);
+		}
+
 	}
 
 	static void InitTypeData() {

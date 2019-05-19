@@ -9,6 +9,8 @@ public class CityGenerator : MonoBehaviour {
 	public class City{
 		public BoxCollider region;
 		public float spaceBetween;
+		public int centerSpace = 0;
+		
 		[HideInInspector] public int houses;
 		[HideInInspector] public Vector2Int housesDimension;
 
@@ -50,17 +52,18 @@ public class CityGenerator : MonoBehaviour {
 	public City[] cities;
 
 	public GameObject[] housesModels;
+	
+	public int housesInCdeCountry = 2400 / 3;
 
 	private Terrain terrain;
 
-	// Use this for initialization
-	void Start () {
+	public void CreateCities () {
 		terrain = Terrain.activeTerrain;
 		for (int i = 0; i < cities.Length; i++) {
 			cities[i].Init();
 		}		
 
-		GenerateCities(2400 / 3);
+		GenerateCities(housesInCdeCountry);
 
 	}
 
@@ -93,6 +96,8 @@ public class CityGenerator : MonoBehaviour {
 		SpiralIterator it = new SpiralIterator(city.housesDimension.x, city.housesDimension.y);
 		for(int i = 0; i < amount; i++) {
 			if(!it.Iterate((int p, int x, int y) => {
+				if(i < city.centerSpace) return;
+
 				Vector2Int pos = new Vector2Int(x, y);
 				CreateHouseInPosition(city.GetPosition(pos));
 			})) return;
@@ -103,7 +108,24 @@ public class CityGenerator : MonoBehaviour {
 		position.y = terrain.SampleHeight(position);
 		float dir = (int)position.sqrMagnitude % 4 * 90;
 		
-		Instantiate(housesModels[Random.Range(0, housesModels.Length)],
+		GameObject house = Instantiate(housesModels[Random.Range(0, housesModels.Length)],
 		 position, Quaternion.AngleAxis(dir, Vector3.up));
+		house.transform.parent = transform;
+		house.tag = "House";
+        house.isStatic = true;
 	}
+
+	public void RemoveCities() {
+        Transform[] allChildren = gameObject.GetComponentsInChildren<Transform>();
+		List<GameObject> houses = new List<GameObject>();
+        foreach (Transform child in allChildren) {
+            if (child.gameObject.tag == "House") {
+				houses.Add(child.gameObject);
+            }
+        }
+		foreach (GameObject house in houses) {
+			DestroyImmediate(house);
+		}
+    }
+
 }

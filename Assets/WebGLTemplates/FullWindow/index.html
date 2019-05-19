@@ -118,13 +118,12 @@
 				gameInstance.info.message.innerHTML = msg[0];
 				msgInterval = setInterval(function(){
 					gameInstance.info.message.innerHTML = 
-						"<small>Es normal que se pare al 90%</small><br />" +
 						msg[Math.floor(Random(msg.length))];
-				}, Random(1000, 100));
+				}, Random(2000, 200));
 			}
-			gameInstance.info.percentage.innerHTML = (progress * 100).toFixed(2) + "%";
-			gameInstance.progress.full.style.width = (100 * progress) + "%";
-  			gameInstance.progress.empty.style.width = (100 * (1 - progress)) + "%";
+			gameInstance.info.percentage.innerHTML = (progress * 111.111).toFixed(2) + "%";
+			gameInstance.progress.full.style.width = (111.111 * progress) + "%";
+  			gameInstance.progress.empty.style.width = (111.111 * (1 - progress)) + "%";
 			if (progress == 1) {
 				clearInterval(msgInterval);
 				gameInstance.logo.style.display = gameInstance.progress.style.display = gameInstance.info.style.display = "none";
