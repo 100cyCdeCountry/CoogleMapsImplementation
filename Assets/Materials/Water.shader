@@ -6,6 +6,8 @@
 		_Metallic ("Metallic", Range(0,1)) = 0.0
 		_NormalIntensity ("Normal Intensity", float) = 1.0
 		_WaveSpeed ("Wave Speed", float) = 1.0
+		_LightColor("Light Color", Color) = (1,1,1,1)
+		_Shinethreshold("Shine Threshold", float) = 0.5
 	}
 	SubShader {
 		Tags { "RenderType"="Opaque" }
@@ -27,7 +29,9 @@
 		half _Glossiness;
 		half _Metallic;
 		fixed4 _Color;
+		fixed4 _LightColor;
 		float _NormalIntensity;
+		float _Shinethreshold;
 		half _WaveSpeed;
 
 		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
@@ -40,11 +44,7 @@
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			// Albedo comes from a texture tinted by color
 			fixed4 c = _Color;
-			o.Albedo = c.rgb;
-			// Metallic and smoothness come from slider variables
-			o.Metallic = _Metallic;
-			o.Smoothness = _Glossiness;
-			o.Alpha = c.a;
+			
 
 			//Wave normals
 			half timeSpeed = _Time.x * _WaveSpeed;
@@ -53,6 +53,14 @@
 			half3 normal = UnpackNormal((normal1 + normal2) / 2.f);
 			normal.z /= _NormalIntensity;
 			
+			float willShine = normal.y > _Shinethreshold;
+			float beNormal = 1 - willShine;
+			o.Albedo = willShine * _LightColor + beNormal * c.rgb;
+			o.Alpha = willShine + beNormal * c.a;
+			o.Metallic = willShine + _Metallic * beNormal;
+			o.Smoothness = willShine + _Glossiness * beNormal;
+			
+
 			o.Normal = normal;
 		}
 		ENDCG

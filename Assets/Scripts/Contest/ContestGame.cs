@@ -37,6 +37,7 @@ public class ContestGame : MonoBehaviour {
         AddVsauce(); 
         AddRobotDePlaton2();
         AddMundoDesconocido();
+        AddPax();
 
         main = this;
     }
@@ -877,59 +878,165 @@ public class ContestGame : MonoBehaviour {
         };
 	}
 
-    private void AddDateUnSquirtleDemo()
+    
+    private static void AddPax()
     {
-        /*contests.Add("Squirtle", new ContestData(
-                    "¿Que os parece?",
-                     new string[] { "Fascinante", "Le añadiría algo", "Parece un video de JL" },
-                     new string[][] { 
-                         new string[] { 
-                         "Me alegro que te haya gustado",
-                         "En un principio esto solo iba a ser un mapa",
-                         "pero la idea evoluciono un poco" },
-                         new string[] { 
-                         "Oki, que más le añadirías",
-                         "Dímelo por Discord o Twitter ^^" },
-                         new string[] { 
-                         "ioro to fuerte",
-                         "¿que es lo que cambiarías o prefieres hacer otro juego?",
-                         "Dímelo por Discord o Twitter ^^"
-                     } },
-                     new bool[]{true, true, true},
-                     new string[]{
-                 "Hola hijos de Arceus, listos para que os explote completamente el cerebro",
-                 "Así que alguien ha invocado al squirtle científico",
-                 "Vamo a calmarno",
-                 "Solo hay un problema",
-                 "No he tenido tiempo de seguir haciendo las preguntas",
-                 "Pero esta es la idea del juego",
-                         },
-                         new string[]{
-                 "¿Que más personajes quereís que meta o cosas de CdeCountry?",
-                 "Voy a hacer visibles el resto de personajes para que los veáis",
-                 "La verdad es que voy muy lento con los diálogos, sería una gran ayuda si me podéis hacer algunos",
-                 "Puedes volver a jugarlo abriendo el menu de arriba a la izquierda y borrando la partida",
-                 "gracias por jugarlo y",
-                 "Adioss...",
-                         }));
-        contests["Squirtle"].OnEnd((c) => {
-            foreach (var character in characters)
-            {
-                var initiator = character.Value.GetComponent<ContestInitiator>();
-                initiator.Show();
+        ContestDefault contest = new ContestDefault((ContestDefault c) => { return c.WasAnswerCorrect(0) && c.WasAnswerCorrect(1); });
+        
 
-                if(initiator.contestName != "MundoDesconocido")
-                    initiator.MarkAsFinished();
-            }
-
-            UITip.SetTip("Adora a CdeCrespo");
+        Sentence nextDialog = (Sentence)ContestData.SentenceListWithEffects(new String[]{
+            "- Iniciando modo de ataque -",
+            "#Attack",
+            "Pax se prepara para lanzarte un ataque de alta energía"
         });
-        //specificTransforms.Add("Squirtle", TransformScale(3));
-        specificTransforms.Add("Squirtle", new RotationAndScale{
-            rotation = Quaternion.identity,
-            offset = Vector3.up * 2.0f,
-            scale = Vector3.one
-        });*/
+
+
+        ContestQuestion question2 = new ContestQuestion(contest, "¿Que deberías hacer?",
+            new string[] { "Invocar a los Illuminatis",
+                           "Protegerte tras un escudo de lechugas",
+                           "Cantar el trap del terraplanismo" 
+                        },      
+            new bool[]{false, false, true},
+            new IContestSentence[]{
+                ContestData.SentenceListWithEffects(new String[]{
+                    " > Invocas a los iluminatis",
+                    " > Los iluminatis te miran y comprueban que no estas suscrito a mundo desconocido",
+                    " > Y con la misma se van",
+                    "Eso es todo bip bup",
+                    "Me decepcionas...",
+                    "#PaxAttackRay"},
+                    new ContestDef((c, d) => {
+                            d.SetColorButton(0, ButtonState.Fail);
+                            d.MoveNext();
+                        }, (c, d) => { return c.Next();},
+                    ContestData.SentenceListWithEffects(new String[]{
+                        " > El rayo te impacta y Pax vence",
+                        " > Tras esto Pax pasa a ser el gobernador de CdeCountry",
+                        " > Y realiza su fascinante proyecto"
+                    }))
+                ),
+                ContestData.SentenceListWithEffects(new String[]{
+                    " > Años de recolecta de lechugas en la wikiselva han dado sus frutos",
+                    " > Ibas a utilizarlo para hacer una gran ensalada, pero no hay otra opción",
+                    " > Extiendes las hojas de lechuga y te ocultas tras ellas",
+                    " > Pax lanza el rayo hacia tí",
+                    "#PaxAttackRay"
+                },
+                new ContestDef((c, d) => {
+                    d.SetColorButton(1, ButtonState.Correct);
+                    d.MoveNext();
+                }, (c, d) => { return c.Next();},
+                ContestData.SentenceListWithEffects(new String[]{
+                    " > Las lechugas se zarandean como si Wikiseba las hubiese llamado",
+                    " > Empieza a oler a quemado...",
+                    " > Las lechugas están en llamas, pero han parado el ataque"
+                },
+                new ContestDef((c, d) => {
+                    d.SetColorButton(1, ButtonState.Fail);
+                    d.MoveNext();
+                }, (c, d) => { return c.Next();},
+                ContestData.SentenceListWithEffects(new String[]{
+                    " > Desgraciadamente las lechugas generan tanto humo que te intoxicas y pierdes la conciencia",
+                    " > Si es que nunca te puedes fiar del lechugismo",
+                    " > Mientras estas inconsciente Pax se hace gobernador de CdeCountry",
+                    " > Y realiza su fascinante proyecto"
+                }
+                ))
+                ))),
+                ContestData.SentenceListWithEffects(new String[]{
+                    " > Sacas el movil y pones el trap del terraplanismo a todo volumen",
+                    " > Comienzas a cantar el trap del terraplanismo",
+                    " - Terraplanismo ... conspiración....",
+                    "Pero q-que es esto bip?",
+                    " - No se enteran que la tierra bola ya no esta de moda",
+                    "Que es este ritmo???",
+                    " - Ahora es plana",
+                    " - plana plana",
+                    },
+                    new ContestDef((c, d) => {
+                            d.SetColorButton(2, ButtonState.Correct);
+                            d.MoveNext();
+                        }, (c, d) => { return c.Next();},
+                    ContestData.SentenceListWithEffects(new String[]{
+                        "Es un temazo! bip biiip",
+                        " - Como tu encefalograma",
+                        " - grama grama ...",
+                        "BIIIP, definitivamente he cambiado de planes",
+                        "CdeCountry no será una gran piscina, serán los Djs de mi gran parque acuático extremo",
+                        "Espero que acepten mi solicitud cuando el parque este terminado",
+                        "Hasta entonces nos vemos Bip!",
+                        " > Pax se marcha cantando el trap del terraplanismo",
+                        " > Has salvado CdeCountry!!"
+                    }))
+                ),
+            }
+                                
+        );
+
+        IContestSentence question = new ContestQuestion(contest, "Solicito la absoluta rendición de CdeCountry ahora mismo BIP!",
+            new string[] { "Nos rendimos", "Nunca nos rendiremos",
+                           "Puedes presentarte a las elecciones" 
+                        },      
+            new bool[]{false, true, true},
+            new IContestSentence[]{
+                Sentence.CreateDialog(new String[]{
+                    "Oh, sois muy razonable",
+                    "A partir de ahora habrá paz en CdeCountry Biiiip",
+                    "No más guerras ni ofensas contra CdeCrespo",
+                    "Y seréis participes en mi fascinante proyecto Bip biip",
+                    "CdeCountry será la piscina de mi gran parque acuático extremo Bip Bip Biip"
+                }),
+                Sentence.CreateDialog(new String[]{
+                    "Biip Oh, entonces tendremos que luchar BIP BIP!",
+                }, nextDialog),
+                Sentence.CreateDialog(new String[]{
+                    "Uf",
+                    "Mis calculos estiman que las elecciones serán el ...",
+                    "Bip bip...",
+                    "Bip bup bup biip",
+                    "Biiiiiiiiiiiiiiiiiip",
+                    "Biuuuup, error en chip positrónico",
+                    "Creo que va a quedar bastante para eso",
+                    "Y no creo que ni CU, ni KFC, ni PCCDCC les guste tenerme",
+                    "Así que me veo obligado a usar la fuerza BIP BIP!"
+                }, nextDialog)
+            }
+                                
+        );
+
+        IContestSentence firstDialog = ContestData.SentenceListWithEffects(new string[]{
+                 "Hola estimado CdeCiudadano Bip Bup Bip",
+                 "Soy Pax CdeComandante del Sistema Planetario de Pantea Bip Bup",
+                }, question);
+                
+
+        Vector3 seaPos = GameObject.Find("Sea").transform.position;
+
+		nextDialog.GetLast().SetNext(question2);
+        question2.HideButtonResult();
+        contest.SetSentences(firstDialog);
+        
+        contest.OnEnd(c => {
+            if(c.HaveWin()) {
+                characters["Pax"].GetComponent<ContestInitiator>().Hide(); 
+                GameObject.Find("Sea").transform.position = seaPos;
+            }else{
+                Vector3 seaPosUp = seaPos;
+                seaPosUp.y += 14;
+                GameObject.Find("Sea").transform.position = seaPosUp;
+                characters["Pax"].GetComponent<ContestInitiator>().MarkAsFinished(false); 
+            }
+            }
+        );
+        contests.Add("Pax", contest);
+
+        specificTransforms.Add("Pax", new RotationAndScale
+        {
+            rotation = Quaternion.Euler(0, 180, 0),
+            scale = Vector3.one * 1.1f,
+            offset = new Vector3(0, 0, -12)
+        });
     }
+
 
 }

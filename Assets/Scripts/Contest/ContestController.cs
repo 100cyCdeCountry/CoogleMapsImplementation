@@ -179,11 +179,14 @@ public class ContestController : MonoBehaviour, IContestDisplay {
 			case ButtonState.Fail:
 				buttonColor = Color.red;
 			break;
+			case ButtonState.Selected:
+				buttonColor = new Color(255, 0, 255);
+			break;
 			default:
 				buttonColor = Color.white;
 			break;
 		}
-        ColorBlock c = answersButtons[i].colors;
+		ColorBlock c = answersButtons[i].colors;
 		c.normalColor = buttonColor;
 		answersButtons[i].colors = c;
 		answersButtons[i].GetComponent<Image>().color = buttonColor;

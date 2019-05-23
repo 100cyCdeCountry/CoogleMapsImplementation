@@ -164,6 +164,7 @@ public class ContestQuestion : IContestSentence
 	private bool[] solutions = null;
 	private IContestSentence[] nexts = null;
 	private IContestData contest;
+	private bool dontShow = false;
 
     public ContestQuestion(IContestData contest, string question, string[] answers, int correct,
 				 IContestSentence[] nexts = null) {
@@ -194,13 +195,18 @@ public class ContestQuestion : IContestSentence
     {
 		int option = display.GetLastAnswer();
 		contest.AddAnswer(solutions[option]);
-		display.SetColorButton(option, solutions[option]? ButtonState.Correct : ButtonState.Fail);
+		if(dontShow)
+			display.SetColorButton(option, ButtonState.Selected);
+		else
+			display.SetColorButton(option, solutions[option]? ButtonState.Correct : ButtonState.Fail);
 		display.DisableButtons();
 
-		if(solutions[option])
-			display.PlayWin();
-		else
-			display.PlayFail();
+		if(!dontShow) {
+			if(solutions[option])
+				display.PlayWin();
+			else
+				display.PlayFail();
+		}
 			
         return nexts == null? null : nexts[option];
     }
@@ -210,6 +216,10 @@ public class ContestQuestion : IContestSentence
 		display.ShowButtons(answers);
         display.Write(question);
     }
+
+	public void HideButtonResult(bool option = true) {
+		dontShow = option;
+	}
 
 	public bool WaitForButtons()
     {

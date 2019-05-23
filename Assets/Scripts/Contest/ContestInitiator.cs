@@ -26,9 +26,9 @@ public class ContestInitiator : MonoBehaviour {
 			SwitchScenes.Get().ActiveContestScene(contestName, gameObject);
 	}
 
-    public void MarkAsFinished()
+    public void MarkAsFinished(bool finish = true)
     {
-        finished = true;
+        finished = finish;
 		SaveState();
     }
 

@@ -8,7 +8,7 @@ using System;
 [RequireComponent(typeof(MeshFilter))]
 public class RoadTool : MonoBehaviour
 {
-#if UNITY_EDITOR
+
     public List<Vector3> points = new List<Vector3>();
     public bool showPath = false;
     public float upOffset = 0;
@@ -23,6 +23,7 @@ public class RoadTool : MonoBehaviour
 
     private List<Vector3> debugPoints = new List<Vector3>();
 
+#if UNITY_EDITOR
 
     void OnDrawGizmos() {
         
@@ -58,6 +59,8 @@ public class RoadTool : MonoBehaviour
                                 Quaternion.identity, 1, EventType.Repaint);
         }
     }
+    
+#endif
 
     public Vector3[] GetPath() {
         Vector3[] pointsInWorld = new Vector3[points.Count];
@@ -88,6 +91,7 @@ public class RoadTool : MonoBehaviour
         selected = index;
     }
 
+#if UNITY_EDITOR
     public void ManageClick(Vector2 mousePos){
         Ray ray = HandleUtility.GUIPointToWorldRay(mousePos);
         RaycastHit hit;
@@ -111,6 +115,8 @@ public class RoadTool : MonoBehaviour
         }
         
     }
+    
+#endif
 
     private bool IsBetweenPoints(Vector3 point, out int index){
         for(int i = 0; i < points.Count -1; i++) {
@@ -142,6 +148,8 @@ public class RoadTool : MonoBehaviour
         return d >= 0 && d <= lineDir.magnitude;/*new Bounds(linePnt + lineDir/2.0f, lineDir).Contains(nearest);*/
     }
 
+#if UNITY_EDITOR
+
     public void ManageDrag(Vector2 mousePosition)
     {
         if(selected == -1) return;
@@ -155,6 +163,9 @@ public class RoadTool : MonoBehaviour
         }
 
     }
+
+        
+#endif
 
     private void RemovePoint(int indexToRemove)
     {
@@ -170,6 +181,8 @@ public class RoadTool : MonoBehaviour
         CreateMesh();
     }
 
+#if UNITY_EDITOR
+
     public void ManageMouseUp(Vector2 mousePosition)
     {
         if(!dragged && selected != -1)
@@ -179,6 +192,9 @@ public class RoadTool : MonoBehaviour
         dragged = false;
 
     }
+
+        
+#endif
 
     private bool isNearPoint(Vector3 point, out int posiblePoint)
     {
@@ -269,6 +285,5 @@ public class RoadTool : MonoBehaviour
 
     }
 
-    #endif
     
 }

@@ -4,7 +4,8 @@ public enum ButtonState
 {
     Fail,
     Correct,
-    Normal    
+    Normal,
+    Selected    
 }
 
 public interface IContestDisplay

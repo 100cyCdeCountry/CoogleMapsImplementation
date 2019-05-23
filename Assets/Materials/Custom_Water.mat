@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Custom_Water
   m_Shader: {fileID: 4800000, guid: 8182545e279687c449ec3bb8a6dbf862, type: 3}
   m_ShaderKeywords: 
@@ -26,6 +27,8 @@ Material:
     - _Glossiness: 0.591
     - _Metallic: 0.853
     - _NormalIntensity: 4.47
+    - _Shinethreshold: 1
     - _WaveSpeed: 0.9
     m_Colors:
     - _Color: {r: 1, g: 0.20779696, b: 0, a: 1}
+    - _LightColor: {r: 0.05660379, g: 0.05660379, b: 0.05660379, a: 1}
