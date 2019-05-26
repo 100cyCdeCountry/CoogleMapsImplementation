@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class UrlImage : MonoBehaviour {
 
@@ -21,7 +22,7 @@ public class UrlImage : MonoBehaviour {
 		if(img == null)
 			img = GetComponent<Image>();
 		
-		img.sprite = loadingImage;
+		img.overrideSprite = loadingImage;
 		StartCoroutine(LoadImageCoroutine(url));
 	}
 
@@ -31,9 +32,20 @@ public class UrlImage : MonoBehaviour {
 
 	public IEnumerator LoadImageCoroutine(string url) {
 		//warning CS0618: 'WWW' is obsolete: 'Use UnityWebRequest, a fully featured replacement which is more efficient and has additional features'
-		WWW www = new WWW(url);
-		yield return www;
-		img.sprite = Sprite.Create(www.texture, new Rect(0, 0, www.texture.width, www.texture.height), new Vector2(0, 0));
+		UnityWebRequest www = UnityWebRequestTexture.GetTexture(url);
+		yield return www.SendWebRequest();
+
+		if(www.isNetworkError || www.isHttpError) {
+			Debug.Log(www.error);
+		}
+		else {
+			Texture2D texture = (Texture2D)((DownloadHandlerTexture)www.downloadHandler).texture;
+			Sprite s = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0, 0), 100, 0, SpriteMeshType.FullRect);
+
+			img.overrideSprite = s;
+
+		}
+		
 	}
 	
 }
