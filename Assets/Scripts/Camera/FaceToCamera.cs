@@ -14,5 +14,10 @@ public class FaceToCamera : MonoBehaviour {
 		if(Camera.main != null)
 			transform.rotation = Camera.main.transform.rotation;
 	}
+	
+	void Update() {
+		if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0) 
+			transform.rotation = Camera.main.transform.rotation;
+	}
 
 }

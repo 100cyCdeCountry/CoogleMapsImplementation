@@ -47,5 +47,9 @@ public class UrlImage : MonoBehaviour {
 		}
 		
 	}
+
+	public void ReleaseImage() {
+		img.overrideSprite = null;
+	}
 	
 }

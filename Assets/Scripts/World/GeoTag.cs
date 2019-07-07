@@ -15,6 +15,7 @@ public class GeoTag : MonoBehaviour {
 		Mount,	
 		Bay,
 		Monument,
+		Holiday,
 	}
 
 	public Type type;
@@ -76,6 +77,7 @@ public class GeoTag : MonoBehaviour {
 		typeDatas.Add(Type.Sea, new TypeData{scale = 0.02f, maxHeight = 1000, color = Color.blue});
 		typeDatas.Add(Type.Bay, new TypeData{scale = 0.015f, maxHeight = 350, color = new Color(0.25f, 0.25f, 1, 1)});
 		typeDatas.Add(Type.Monument, new TypeData{scale = 0.012f, maxHeight = 200, color = Color.white});
+		typeDatas.Add(Type.Holiday, new TypeData{scale = 0.02f, maxHeight = 1000, color = Color.yellow});
 	}
 
 }

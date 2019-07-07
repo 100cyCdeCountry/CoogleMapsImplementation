@@ -15,10 +15,18 @@ public class ViewDrag : MonoBehaviour {
 	[SerializeField]
     private float height = 4; 
     [SerializeField]
-    private float angle = 20; 
+    private float angle = 20;
+    [SerializeField]
+    private float rotation = 0;  
 
 	[SerializeField]
     private float heightChangeFactor = 40.0f;
+    [SerializeField]
+    private float angleChangeFactor = 20;
+    [SerializeField]
+    private float rotationChangeFactor = 20;
+    [SerializeField]
+    private float fovChangeFactor = 20;    
 	[SerializeField]
 	private float smooth = 0.05f;	
 	[SerializeField]
@@ -32,6 +40,8 @@ public class ViewDrag : MonoBehaviour {
     private Vector3 center = new Vector3(500, 0, 500);
     [SerializeField]
     private float maxDistance = 500;
+
+    private Camera camera;
 	
 	// Use this for initialization
 	void Start() {
@@ -39,32 +49,11 @@ public class ViewDrag : MonoBehaviour {
 										 GetSurfaceHeight(transform.position),
 										 transform.position.z);
 
-        transform.eulerAngles = new Vector3(90f - angle, 0f, 0f);
+        camera = GetComponent<Camera>();
 	}
 
 	void Update()
     {
-/*
-  if (Input.touchCount == 2)
-        {
-            // Store both touches.
-            Touch touchZero = Input.GetTouch(0);
-            Touch touchOne = Input.GetTouch(1);
-
-            // Find the position in the previous frame of each touch.
-            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
-
-            // Find the magnitude of the vector (the distance) between the touches in each frame.
-            float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-            float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
-
-            // Find the difference in the distances between each frame.
-            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
-
- */
-
-
 
         if(Input.touchCount != 2)
             HandleDrag();
@@ -72,6 +61,8 @@ public class ViewDrag : MonoBehaviour {
         HandleZoom();
 
 		UpdateHeight();
+        UpdateRotation();
+        UpdateFieldOfView();
         CheckMaxDistance();
     }
 
@@ -101,6 +92,24 @@ public class ViewDrag : MonoBehaviour {
             height += transform.position.y - surfaceHeight;
         }
     
+    }
+
+    private void UpdateRotation()
+    {
+        rotation += Input.GetAxis("Horizontal") * Time.deltaTime * rotationChangeFactor;
+        angle += Input.GetAxis("Vertical") * Time.deltaTime * angleChangeFactor;
+        transform.eulerAngles = new Vector3(90f - angle, rotation, 0f);
+    }
+
+    private void UpdateFieldOfView() 
+    {
+        if(Input.GetKey(KeyCode.Plus) || Input.GetKey(KeyCode.KeypadPlus)) {
+            camera.fieldOfView += fovChangeFactor * Time.deltaTime;
+        }
+
+        if(Input.GetKey(KeyCode.Minus) || Input.GetKey(KeyCode.KeypadMinus)) {
+            camera.fieldOfView -= fovChangeFactor * Time.deltaTime;
+        }
     }
 
     private void HandleZoom()
@@ -158,13 +167,13 @@ public class ViewDrag : MonoBehaviour {
 
 		// Get direction of movement.  (Note: Don't normalize, the magnitude of change is going to be Vector3.Distance(current_position-hit_position)
 		// anyways.  
-		Vector3 direction = Camera.main.ScreenToWorldPoint(hitPosition) - Camera.main.ScreenToWorldPoint(currentPosition);
+		Vector3 direction = camera.ScreenToWorldPoint(hitPosition) - camera.ScreenToWorldPoint(currentPosition);
 
 		Vector3 position = cameraPosition + direction;
 
 		this.direction = (position - transform.position) / Time.deltaTime;
 
-        position.y =  Camera.main.transform.position.y;
+        position.y =  camera.transform.position.y;
 
         transform.position = position;
 		
