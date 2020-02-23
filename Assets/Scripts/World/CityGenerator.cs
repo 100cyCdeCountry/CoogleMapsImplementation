@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class CityGenerator : MonoBehaviour {
 
+	public SurfaceManager surface;	
+
 	[System.Serializable]
 	public class City{
 		public BoxCollider region;
 		public float spaceBetween;
 		public int centerSpace = 0;
-		
+
 		[HideInInspector] public int houses;
 		[HideInInspector] public Vector2Int housesDimension;
 
@@ -105,7 +107,10 @@ public class CityGenerator : MonoBehaviour {
 	}
 
 	private void CreateHouseInPosition(Vector3 position) {
-		position.y = terrain.SampleHeight(position);
+		if(SurfaceManager.IsWater(surface, position))
+			return;
+
+		position.y = SurfaceManager.GetSurfaceHeight(surface, position);
 		float dir = (int)position.sqrMagnitude % 4 * 90;
 		
 		GameObject house = Instantiate(housesModels[Random.Range(0, housesModels.Length)],

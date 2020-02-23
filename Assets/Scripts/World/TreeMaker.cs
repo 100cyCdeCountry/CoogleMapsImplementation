@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class TreeMaker : MonoBehaviour {
 
+	public SurfaceManager surface;	
+
 	[SerializeField] int amount = 500;
 	[SerializeField] GameObject[] treePrefabs;
 	[SerializeField] Transform water;
@@ -17,33 +19,32 @@ public class TreeMaker : MonoBehaviour {
 
     public void CreateTrees () {
         cities = GetComponent<CityGenerator>();
-		Terrain terrain = Terrain.activeTerrain;
 		for(int i = 0; i < amount; i++)
         {
-            Vector3 randomPos = GetRandomSurfacePosition(terrain);
+            Vector3 randomPos = GetRandomSurfacePosition();
 
             CreateTree(randomPos);
         }
     }
 
-    private Vector3 GetRandomSurfacePosition(Terrain terrain)
+    private Vector3 GetRandomSurfacePosition()
     {
         Vector3 randomPos;
-        Vector3 terrainDimension = terrain.terrainData.size;
+        Vector3 terrainDimension = SurfaceManager.SurfaceDimension();
         do
         {
             randomPos = new Vector3(Random.Range(0, terrainDimension.x),
-                0, Random.Range(0, terrainDimension.z));
-            randomPos.y = terrain.SampleHeight(randomPos);
+                0, Random.Range(0, terrainDimension.z)) + SurfaceManager.SurfacePosition();
+            randomPos.y = SurfaceManager.GetSurfaceHeight(surface, randomPos);
         } while (!CouldTreeSpawnIn(randomPos));
         return randomPos;
     }
 
     private bool CouldTreeSpawnIn(Vector3 randomPos)
     {
-        return randomPos.y > water.position.y &&
-         randomPos.y < maxHeight &&
-         randomPos.y > SurfaceManager.waterHeight + minHeight &&
+        return randomPos.y < maxHeight &&
+         !SurfaceManager.IsWater(surface, randomPos) &&
+         randomPos.y > SurfaceManager.WaterHeight(surface) + minHeight &&
           !cities.cities.Any((CityGenerator.City city) =>
           {
               Vector3 pos = randomPos;

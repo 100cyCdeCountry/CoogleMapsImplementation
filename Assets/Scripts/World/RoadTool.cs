@@ -37,6 +37,7 @@ public class RoadTool : MonoBehaviour
     private void DrawPath() {
         Gizmos.color = Color.red;
         Handles.color = Color.blue;
+        
         for(int i = 0; i < points.Count; i++) {
             if(i > 0) {
                 Gizmos.DrawLine(transform.TransformPoint(points[i - 1]) + Vector3.up * (upOffset + 1),
